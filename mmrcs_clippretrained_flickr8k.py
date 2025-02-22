@@ -261,3 +261,9 @@ def captionToImage(caption):
   top_images = search_top_matches(caption, image_embeddings_list, image_filenames_list,top_n,get_query_embedding)
   image_name=top_images[0]['item']  
   return image_name
+  
+def imageToImage(image):
+  image_path = os.path.join(project_path,"uploaded_files", image.name)
+  top_images = search_top_matches(image_path, image_embeddings_list, image_filenames_list,top_n,get_image_embedding)
+  image_name=top_images[0]['item']  
+  return image_name
